@@ -3,9 +3,10 @@
 // Node 22, standard library only, no network, deterministic.
 import { mkdirSync, writeFileSync } from "node:fs";
 
-// The line: this really happened — the kit's bundler prints the redaction
-// terms that matched nothing, and with them the very API keys the redaction
-// was meant to hide, into the bundle log. Guarding the keys leaked the keys.
+// The line: this really happened today — the kit's bundler prints the
+// redaction terms that matched nothing, and with them the very API keys the
+// redaction was meant to hide, into the bundle log. Guarding the keys leaked
+// the keys; the punch is that the guard did it, not an attacker.
 const line =
   "My agent spent all morning guarding ten API keys from leaking, then printed all ten of them into the log of the bundle it was trying to keep clean.";
 
